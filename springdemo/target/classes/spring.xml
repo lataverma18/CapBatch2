@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd 
+    http://www.springframework.org/schema/context/ 
+    http://www.springframework.org/schema/context/spring-context.xsd">    
+    
+    
+  
+  <bean id="emp1" class="com.lata.springdemo.beans.Employee" autowire="constructor" scope="prototype" init-method="initMethod" destroy-method="beforeDestroy">
+   	<constructor-arg index="1" name="ename" value="Ronit"></constructor-arg>
+   	<constructor-arg index="0" name="eid" type="int" value="101"></constructor-arg>
+   	<constructor-arg index="2" name="esalary" value="56000"></constructor-arg>
+   	<constructor-arg><ref bean="add1"/></constructor-arg>
+   </bean>
+   
+    
+   <bean id="add2" class="com.lata.springdemo.beans.Address">
+   	<constructor-arg value="E-1405/49"></constructor-arg>
+   	<constructor-arg value="Fbd"></constructor-arg>
+   	<constructor-arg value="Delhi/NCR"></constructor-arg>
+   	<constructor-arg value="121001"></constructor-arg>
+   </bean>
+   
+   <bean id="placeHolderConfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+     <property name="location"  value="application.properties" />
+</bean>
+   
+    <bean id="add1" class="com.lata.springdemo.beans.Address">
+   	<constructor-arg value="${address}"></constructor-arg>
+   	<constructor-arg value="${city}"></constructor-arg>
+   	<constructor-arg value="${state}"></constructor-arg>
+   	<constructor-arg value="${zipcode}"></constructor-arg>
+   </bean>
+</beans>
