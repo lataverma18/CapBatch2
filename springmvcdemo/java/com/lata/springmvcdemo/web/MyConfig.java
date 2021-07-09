@@ -8,7 +8,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages= {"com.lata.springmvcdemo.controllers","com.lata.springmvcdemo.dao"})
+@ComponentScan(basePackages= {"com.lata.springmvcdemo.controllers","com.lata.springmvcdemo.dao","com.lata.springmvcdemo.exceptions"})
 public class MyConfig {
 	
 	@Bean

@@ -1,6 +1,12 @@
 package com.lata.springmvcdemo.entities;
 
-public class Employee {
+import java.io.Serializable;
+
+public class Employee implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int id;
 	private String name;
 	public int getId() {
@@ -19,6 +25,10 @@ public class Employee {
 		super();
 		this.id = id;
 		this.name = name;
+	}
+	public Employee()
+	{
+		
 	}
 	
 }
